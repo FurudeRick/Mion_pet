@@ -4,11 +4,9 @@
 
 该项目使用了[xlbljz/waterRPA at 各种焱 (github.com)](https://github.com/xlbljz/waterRPA/tree/%E5%90%84%E7%A7%8D%E7%84%B1)的工具
 
-
-
 # 环境配置
 
-需要拥有python3的环境并pip一些组件
+查看**使用说明书**
 
 # 使用方法
 
@@ -23,8 +21,6 @@ ctrl + h 打开脚本管理界面
 使用的时候尽量保证路径和文件名是全英文
 
 如果waterRPA工具卡死就使用 ctrl + shift + Z 强行关闭
-
-
 
 # 后续更新
 
