@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Assets.Script
 {
@@ -42,6 +43,8 @@ namespace Assets.Script
         private static IntPtr hKeyboardHook;
 
         static bool isdown = false;
+
+        //钩子要实现的功能
         private static int HookCallback(int nCode, IntPtr wparam, ref KBDLLHOOKSTRUCT lparam)
         {
             if (nCode >= 0 && (wparam == (IntPtr)WM_KEYDOWN || wparam == (IntPtr)WM_SYSKEYDOWN))
@@ -60,8 +63,7 @@ namespace Assets.Script
                 }
                 if (isdown == true && lparam.vkCode == 72)
                 {
-                    Interface form1 = new Interface();
-                    form1.Show();
+                    showWindows();
                 }
             }
             return 0;
@@ -98,6 +100,11 @@ namespace Assets.Script
             }
             if (!(retKeyboard)) throw new Exception("卸载钩子失败");
 
+        }
+        public static void showWindows()
+        {
+            Interface form1 = new Interface();
+            form1.Show();
         }
     }
 }

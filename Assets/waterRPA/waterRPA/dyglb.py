@@ -23,6 +23,7 @@ class Window(QWidget):
         keyboard.add_hotkey('ctrl+shift+z', lambda:os._exit(0))
 
 def mouseClick(clickTimes,lOrR,img,reTry):
+    img = sys.argv[3] + img
     if reTry == 1:
         while True:
             location=pyautogui.locateCenterOnScreen(img,confidence=0.9)
@@ -231,7 +232,6 @@ while True:
     if __name__ == '__main__':
         app = QApplication(sys.argv)
         w = Window()
-        keyboard.add_hotkey('ctrl+shift+x', lambda:print('triggered', 'hotkey'))
         file = sys.argv[1]
         #file = "cmd.xls"
         #打开文件
